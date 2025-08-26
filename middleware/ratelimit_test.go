@@ -899,6 +899,17 @@ func (m *mockCtx) QueryAlphaNum(string) string                               { r
 func (m *mockCtx) ParamFilename(string) string                               { return "" }
 func (m *mockCtx) QueryFilename(string) string                               { return "" }
 func (m *mockCtx) Header(string, string)                                     {}
+func (m *mockCtx) AddHeader(string, string)                                  {}
+func (m *mockCtx) SetHeaders(map[string]string)                              {}
+func (m *mockCtx) SetHeadersFromMap(http.Header)                             {}
+func (m *mockCtx) SetContentType(string)                                     {}
+func (m *mockCtx) SetContentTypeJSON()                                       {}
+func (m *mockCtx) SetContentTypeText()                                       {}
+func (m *mockCtx) SetCacheControl(string)                                    {}
+func (m *mockCtx) SetNoCache()                                               {}
+func (m *mockCtx) SetMaxAge(int)                                             {}
+func (m *mockCtx) SetCORS()                                                  {}
+func (m *mockCtx) SetSecurityHeaders()                                       {}
 func (m *mockCtx) Status(int) flash.Ctx                                      { return m }
 func (m *mockCtx) StatusCode() int                                           { return 200 }
 func (m *mockCtx) JSON(any) error                                            { return nil }

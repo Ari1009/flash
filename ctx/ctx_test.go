@@ -131,7 +131,7 @@ func TestTypedParamHelpers(t *testing.T) {
 	// No default provided -> zero value
 	assert.Equal(t, 0, c.ParamInt("missing"))
 	ps = append(ps, httprouter.Param{Key: "bad", Value: "xx"})
-	c.params = ps
+	c.Reset(rec, req, ps, "/u/:id/:pi/:ok/:bad")
 	assert.Equal(t, 7, c.ParamInt("bad", 7))
 }
 
